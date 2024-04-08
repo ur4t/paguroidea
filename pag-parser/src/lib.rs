@@ -88,7 +88,7 @@ impl<'src> Error<'src> {
                         Report::build(ReportKind::Error, input_name, span.start())
                             .with_message("Format error in grammar definition")
                             .with_label(Label::new((input_name, span.start()..span.end()))
-                                .with_message(format!("{}", message))
+                                .with_message(message.to_string())
                                 .with_color(Color::Red))
                             .finish()
                     },
